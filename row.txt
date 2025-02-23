@@ -1,0 +1,10 @@
+ab abc abb abbb ac b aabb
+abbb abb ab abbbb abc ab
+hello_world test_example regex_test
+Hello World Python Regex Task
+a.b aabb.ab aaab.b a...b
+Hello, world. This is a test, with punctuation.
+snake_case_example another_example_text
+CamelCaseExample AnotherCamelCaseText
+ConvertThisCamelCase ToSnakeCaseExample
+HelloKbtu

@@ -4,9 +4,8 @@ with open("row.txt", "r", encoding="utf-8") as f:
     data = f.read()
 
 print("Task 1")
-matches = re.findall(r"a.*?b", data)
+matches = re.findall(r"ab*", data)
 print(matches)
-
 
 print("Task 2")
 matches = re.findall(r"ab{2,3}", data)
@@ -23,8 +22,8 @@ matches = re.findall(r"[A-Z][a-z]+", data)
 print(matches)
 
 
-print("Task 5")
-matches = re.findall(r"a.*b$", data)
+print('Task 5')
+matches = re.findall(r"a+.b", data)
 print(matches)
 
 
@@ -33,16 +32,13 @@ matches = re.sub(r"[., ]", ":", data)
 print(matches)
 
 
-def snake_to_camel(s):
-    return ''.join(word.capitalize() for word in s.split('_'))
-
 print("Task 7")
-print(snake_to_camel(data))
+matches=re.sub(r"_",'',data)
+print(matches)
 
 
 print("Task 8")
-matches = re.findall(r"[A-Z][^A-Z]*", data)
-print(matches)
+print(re.findall(r"[A-Z][^A-Z]*", data))
 
 
 print("Task 9")
