@@ -1,6 +1,5 @@
 import psycopg2
 import csv
-import pandas as pd
 from tabulate import tabulate 
 
 conn = psycopg2.connect(
@@ -10,7 +9,6 @@ conn = psycopg2.connect(
     password="on2606", 
     port=5433
 )
-
 
 cur = conn.cursor()
 
@@ -22,16 +20,6 @@ cur.execute("""CREATE TABLE IF NOT EXISTS phonebook (
 
 )
 """)
-#filepath = ""C:\Users\nuril\PP2_labs\lab_10""  
-#with open(filepath, 'r') as f:
-   
-#    next(f)
-#    reader = csv.reader(f)
-#    for row in reader:
-#        cur.execute("INSERT INTO phonebook (name, surname, phone) VALUES (%s, %s, %s)", (row[0], row[1], row[2]))
-
-#conn.commit()
-
 
 check = True
 command = ''
@@ -63,6 +51,7 @@ while check:
         4. Type "d" or "D" in order to DELETE data from the table.
         5. Type "f" or "F" in order to close the program.
         6. Type "s" or "S" in order to see the values in the table.
+        7. Type "c" or "C" in order to CLEAR all data in the table.
         """)
         command = str(input())
         
@@ -81,7 +70,7 @@ while check:
                 if back_com == "back":
                     back = True
             if temp == "csv":
-                filepath = input("Enter a file path with proper extension: ")
+                filepath ="C:\\Users\\nuril\\PP2_labs\\lab_10\\students.csv"
                 with open(str(filepath), 'r') as f:
                 # Skip the header row.
                     reader = csv.reader(f)
@@ -192,6 +181,15 @@ while check:
         if command == "f" or command == "F":
             command = ''
             check = False
+        # clear
+        if command == "c" or command == "C":
+            if command == "c" or "C":
+                cur.execute("TRUNCATE TABLE phonebook RESTART IDENTITY")
+                conn.commit()
+                print("All data deleted and ID counter reset.")
+            back_com = str(input('Type "back" in order to return to the list of the commands: '))
+            if back_com == "back":
+                back = True
         
 
 conn.commit()
