@@ -1,0 +1,12 @@
+$kind: http-request
+name: Delete Category
+method: DELETE
+url: '{{baseUrl}}/api/categories/{{categoryId}}/'
+order: 6000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+description: Deletes a category by ID. DELETE /api/categories/{id}/

@@ -1,0 +1,26 @@
+$kind: collection
+name: shop_back API
+description: |-
+  REST API collection for the shop_back Django/DRF project.
+
+  Base URL: {{baseUrl}}
+
+  Endpoints are generated from api/urls.py using DefaultRouter for:
+  - CategoryViewSet (ModelViewSet) → /api/categories/
+  - ProductViewSet  (ModelViewSet) → /api/products/
+
+  Authentication: DRF SessionAuthentication / BasicAuthentication (default).
+  Set the `token` variable in the Local environment to use Token auth.
+variables:
+  - key: baseUrl
+    value: 'http://localhost:8000'
+    description: Base URL of the Django development server
+  - key: token
+    value: ''
+    description: 'DRF auth token (Token <value> in Authorization header)'
+  - key: categoryId
+    value: '1'
+    description: ID of a category for detail/update/delete requests
+  - key: productId
+    value: '1'
+    description: ID of a product for detail/update/delete requests

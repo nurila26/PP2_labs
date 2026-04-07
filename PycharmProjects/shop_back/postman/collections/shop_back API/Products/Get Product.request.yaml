@@ -1,0 +1,12 @@
+$kind: http-request
+name: Get Product
+method: GET
+url: '{{baseUrl}}/api/products/{{productId}}/'
+order: 3000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+description: Retrieves a single product by ID. GET /api/products/{id}/

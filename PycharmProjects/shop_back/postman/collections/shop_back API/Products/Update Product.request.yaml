@@ -1,0 +1,25 @@
+$kind: http-request
+name: Update Product
+method: PUT
+url: '{{baseUrl}}/api/products/{{productId}}/'
+order: 4000
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+      "name": "Updated Laptop",
+      "price": 1099.99,
+      "description": "An updated powerful laptop",
+      "count": 5,
+      "is_active": true,
+      "category": 1
+    }
+description: Fully updates a product by ID. PUT /api/products/{id}/

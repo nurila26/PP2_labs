@@ -1,0 +1,25 @@
+$kind: http-request
+name: Create Product
+method: POST
+url: '{{baseUrl}}/api/products/'
+order: 2000
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+      "name": "Laptop",
+      "price": 999.99,
+      "description": "A powerful laptop",
+      "count": 10,
+      "is_active": true,
+      "category": 1
+    }
+description: Creates a new product. POST /api/products/

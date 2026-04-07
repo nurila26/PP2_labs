@@ -1,0 +1,20 @@
+$kind: http-request
+name: Partial Update Category
+method: PATCH
+url: '{{baseUrl}}/api/categories/{{categoryId}}/'
+order: 5000
+headers:
+  - key: Content-Type
+    value: application/json
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+body:
+  type: json
+  content: |-
+    {
+      "name": "Partially Updated Name"
+    }
+description: Partially updates a category by ID. PATCH /api/categories/{id}/

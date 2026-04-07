@@ -1,0 +1,15 @@
+$kind: http-request
+name: Get Products by Category
+method: GET
+url: '{{baseUrl}}/api/categories/{{categoryId}}/products/'
+order: 7000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+description: |-
+  Custom action: returns all products belonging to a specific category.
+  GET /api/categories/{id}/products/
+  Defined via @action(detail=True, methods=['get']) in CategoryViewSet.

@@ -1,0 +1,12 @@
+$kind: http-request
+name: Get Category
+method: GET
+url: '{{baseUrl}}/api/categories/{{categoryId}}/'
+order: 3000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+description: Retrieves a single category by ID. GET /api/categories/{id}/

@@ -1,0 +1,12 @@
+$kind: http-request
+name: List Categories
+method: GET
+url: '{{baseUrl}}/api/categories/'
+order: 1000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+description: Returns a list of all categories. GET /api/categories/

@@ -1,0 +1,12 @@
+$kind: http-request
+name: Delete Product
+method: DELETE
+url: '{{baseUrl}}/api/products/{{productId}}/'
+order: 6000
+headers:
+  - key: Accept
+    value: application/json
+  - key: Authorization
+    value: 'Token {{token}}'
+    disabled: true
+description: Deletes a product by ID. DELETE /api/products/{id}/

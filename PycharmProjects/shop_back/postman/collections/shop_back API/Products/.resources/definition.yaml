@@ -1,0 +1,4 @@
+$kind: collection
+name: Products
+description: CRUD operations for Product resources. Maps to ProductViewSet (ModelViewSet) at /api/products/.
+order: 2000
