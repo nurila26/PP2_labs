@@ -1,2 +1,10 @@
-- name: Run test
-  run: echo "Test passed"
+name: CI
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Run test
+        run: echo "Test passed"
